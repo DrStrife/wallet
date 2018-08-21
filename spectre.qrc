@@ -101,7 +101,7 @@
         <file alias="assets/js/navigation.min.js">src/qt/res/assets/js/navigation.min.js</file>
         <file alias="assets/js/pages/send.min.js">src/qt/res/assets/js/pages/send.min.js</file>
         <file alias="assets/js/qrcode.min.js">src/qt/res/assets/js/qrcode.min.js</file>
-        <file alias="assets/js/wisp.min.js">src/qt/res/assets/js/wisp.min.js</file>
+        <file alias="assets/js/spectre.min.js">src/qt/res/assets/js/spectre.min.js</file>
         <file alias="assets/js/tooltip.min.js">src/qt/res/assets/js/tooltip.min.js</file>
         <file alias="assets/plugins/boostrapv3/css/bootstrap.min.css">src/qt/res/assets/plugins/boostrapv3/css/bootstrap.min.css</file>
         <file alias="assets/plugins/boostrapv3/css/bootstrap-theme.css">src/qt/res/assets/plugins/boostrapv3/css/bootstrap-theme.css</file>

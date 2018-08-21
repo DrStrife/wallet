@@ -23,10 +23,10 @@ int64_t CChainParams::GetProofOfWorkReward(int nHeight, int64_t nFees) const
 {
     // miner's coin base reward
     int64_t nSubsidy = 0;
-    	
+
 	if(nHeight == 1)
 		nSubsidy = (NetworkID() == CChainParams::TESTNET ? 100000 : 20000000) * COIN;  // 20Mill Pre-mine on MainNet
-    
+
     else if(nHeight <= nLastPOWBlock)
         nSubsidy = 0;
 
@@ -128,14 +128,14 @@ public:
         pchMessageStart[3] = 0xd3;
 
         vAlertPubKey = ParseHex("0410414dfffd27c90e4d77fc6905c488eb67dba6834f1b578640c70fdcef4562b7516b61ad2976c4f6752d7ff0b1fc15b9d40cecc34443366b5621b9c856a81ee9");
-        
+
         nDefaultPort = 37347;
-        nRPCPort = 36657;
+        nRPCPort = 36648;
         nBIP44ID = 0x80000023;
-       
+
 		//nLastPOWBlock = 2016; // Running for 1 Week after ICO
 		nLastPOWBlock = 17000;
-		
+
 		nFirstPosv2Block = 17001;
         nFirstPosv3Block = 17010;
 
@@ -146,7 +146,7 @@ public:
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
         genesis.nNonce   = 715015;
 
-        hashGenesisBlock = genesis.GetHash();		
+        hashGenesisBlock = genesis.GetHash();
 		assert(hashGenesisBlock == uint256("0x000001fd6111f0d71d90b7d8c827c6028dbc867f6c527d90794a0d22f68fecd4"));
         assert(genesis.hashMerkleRoot == uint256("0x48d79d88cdf7d5c84dbb2ffb4fcaab253cebe040a4e7b46cdd507fbb93623e3f"));
 
@@ -187,7 +187,7 @@ public:
         pchMessageStart[3] = 0xb4;
 
         vAlertPubKey = ParseHex("042245fcbce048cb5a93c26dc1cdb613f2d866c66ede4bb806eb6ea373d8378775984d36905c9c8b1ba891901324351ac0d8c49bb46f937fa3c57eaae4da1e54aa");
-                
+
         nDefaultPort = 37111;
         nRPCPort = 36757;
         nBIP44ID = 0x80000001;
@@ -203,7 +203,7 @@ public:
 
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
         genesis.nNonce = 52419;
-		
+
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x00004351133a2c6c1f7277b0d684192b605bc62c03727bba81e4d20863944049"));
 
@@ -244,8 +244,8 @@ public:
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 1);
         genesis.nTime = 1479594600;
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 2;        
-		
+        genesis.nNonce = 2;
+
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 18444;
 
