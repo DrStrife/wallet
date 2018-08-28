@@ -11,7 +11,7 @@ SUBDIRS = tor db4.8/build_unix leveldb src
 Wisp.app: all-am
 	mkdir -p Wisp.app/Contents/{MacOS,Resources}
 	cp Info.plist Wisp.app/Contents
-	cp spectre.icns Wisp.app/Contents/Resources
+	cp wisp.icns Wisp.app/Contents/Resources
 	cp src/wisp Wisp.app/Contents/MacOS/Wisp
 	echo "APPL????" > Wisp.app/Contents/PkgInfo
 	@MACDEPLOYQT@ Wisp.app @MACDEPLOYQT_LIBPATH@
