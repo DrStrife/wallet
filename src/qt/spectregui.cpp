@@ -218,7 +218,7 @@ SpectreGUI::SpectreGUI(QWidget *parent):
     addJavascriptObjects();
 }
 
-unsigned short const onion_port = 9089;
+unsigned short const onion_port = 9084;
 
 void SpectreGUI::loadIndex() {
 #ifdef Q_OS_WIN
