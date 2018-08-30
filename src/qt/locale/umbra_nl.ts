@@ -1932,7 +1932,7 @@ Kring grootte van één is niet geheim en tast het netwerk aan.</translation>
 <context>
     <name>WispGUI</name>
     <message>
-        <location filename="../spectre.cpp" line="+111"/>
+        <location filename="../wisp.cpp" line="+111"/>
         <source>A fatal error occurred. Spectre can no longer continue safely and will quit.</source>
         <translation type="unfinished"/>
     </message>

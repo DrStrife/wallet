@@ -61,7 +61,7 @@ HEADERS += \
     $$PWD/qt/qvaluecombobox.h \
     $$PWD/qt/rpcconsole.h \
     $$PWD/qt/scicon.h \
-    $$PWD/qt/spectrebridge.h \
+    $$PWD/qt/wispbridge.h \
     $$PWD/qt/wispgui.h \
     $$PWD/qt/trafficgraphwidget.h \
     $$PWD/qt/transactiondesc.h \
@@ -159,8 +159,8 @@ SOURCES += \
     $$PWD/qt/qvaluecombobox.cpp \
     $$PWD/qt/rpcconsole.cpp \
     $$PWD/qt/scicon.cpp \
-    $$PWD/qt/spectre.cpp \
-    $$PWD/qt/spectrebridge.cpp \
+    $$PWD/qt/wisp.cpp \
+    $$PWD/qt/wispbridge.cpp \
     $$PWD/qt/wispgui.cpp \
     $$PWD/qt/trafficgraphwidget.cpp \
     $$PWD/qt/transactiondesc.cpp \

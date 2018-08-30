@@ -1927,7 +1927,7 @@ Ring size of one is not anonymous, and harms the network.</source>
 <context>
     <name>WispGUI</name>
     <message>
-        <location filename="../spectre.cpp" line="+111"/>
+        <location filename="../wisp.cpp" line="+111"/>
         <source>A fatal error occurred. Spectre can no longer continue safely and will quit.</source>
         <translation type="unfinished"/>
     </message>

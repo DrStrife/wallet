@@ -224,9 +224,9 @@ BUILT_SOURCES = qt/ui_aboutdialog.h \
 bin_PROGRAMS += wisp
 
 wisp_SOURCES = $(common_SOURCES) \
-		  qt/qrc_spectre.cpp \
+		  qt/qrc_wisp.cpp \
 		  qt/moc_wispgui.cpp \
-		  qt/moc_spectrebridge.cpp \
+		  qt/moc_wispbridge.cpp \
 		  qt/moc_rpcconsole.cpp \
 		  qt/moc_peertablemodel.cpp \
 		  qt/moc_notificator.cpp \
@@ -280,8 +280,8 @@ wisp_SOURCES = $(common_SOURCES) \
 		  qt/trafficgraphwidget.cpp \
 		  qt/messagemodel.cpp \
 		  qt/wispgui.cpp \
-		  qt/spectre.cpp \
-		  qt/spectrebridge.cpp
+		  qt/wisp.cpp \
+		  qt/wispbridge.cpp
 
 wisp_LDADD = $(wispd_LDADD) $(QT5_LIBS) $(QT5WEBKIT_LIBS)
 wisp_CPPFLAGS = $(wispd_CPPFLAGS) $(QT5_CFLAGS) $(QT5WEBKIT_CFLAGS) -DQT_DISABLE_DEPRECATED_BEFORE=0
