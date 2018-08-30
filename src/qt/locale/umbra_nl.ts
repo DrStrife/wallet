@@ -16,10 +16,13 @@
         <source>Copyright © 2009-2014 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
 Copyright © 2014 The BlackCoin developers
-Copyright © 2015 The Shadow developers</source>
+Copyright © 2015 The Shadow developers
+Copyright © 2018 The Wisp developers</source>
         <translation>Copyright © 2009-2014 De Bitcoin ontwikkelaars
 Copyright © 2012-2014 De NovaCoin ontwikkelaars
-Copyright © 2014-2016 De SpectreCoin ontwikkelaars</translation>
+Copyright © 2015 De Shadow ontwikkelaars
+Copyright © 2015-2018 De SpectreCoin ontwikkelaars
+Copyright © 2018 De Wisp ontwikkelaars</translation>
     </message>
     <message>
         <location line="+16"/>
@@ -2853,8 +2856,8 @@ Verwachten tijd tot beloning is %3</translation>
     </message>
     <message>
         <location line="-87"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 36657 or testnet: 36757)</source>
-        <translation>Wacht op JSON-RPC-connecties op &lt;poort&gt; (standaard: 36657 of testnet: 36757) </translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 36648 or testnet: 36757)</source>
+        <translation>Wacht op JSON-RPC-connecties op &lt;poort&gt; (standaard: 36648 of testnet: 36757) </translation>
     </message>
     <message>
         <location line="-11"/>

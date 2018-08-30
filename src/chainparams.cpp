@@ -130,7 +130,7 @@ public:
         vAlertPubKey = ParseHex("0410414dfffd27c90e4d77fc6905c488eb67dba6834f1b578640c70fdcef4562b7516b61ad2976c4f6752d7ff0b1fc15b9d40cecc34443366b5621b9c856a81ee9");
         
         nDefaultPort = 37347;
-        nRPCPort = 36657;
+        nRPCPort = 36648;
         nBIP44ID = 0x80000023;
        
 		//nLastPOWBlock = 2016; // Running for 1 Week after ICO

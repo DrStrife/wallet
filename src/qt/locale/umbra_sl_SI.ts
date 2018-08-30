@@ -16,7 +16,8 @@
         <source>Copyright © 2009-2014 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
 Copyright © 2014 The BlackCoin developers
-Copyright © 2015 The Shadow developers</source>
+Copyright © 2015 The Shadow developers
+Copyright © 2018 The Wisp developers</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2838,8 +2839,8 @@ Expected time to earn reward is %3</source>
     </message>
     <message>
         <location line="-87"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 36657 or testnet: 36757)</source>
-        <translation>Sprejmi povezave na &lt;port&gt; (privzeta vrata: 37347 ali testnet: 37111) </translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 36648 or testnet: 36757)</source>
+        <translation>Sprejmi povezave na &lt;port&gt; (privzeta vrata: 36648 ali testnet: 36757) </translation>
     </message>
     <message>
         <location line="-11"/>

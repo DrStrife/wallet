@@ -16,7 +16,8 @@
         <source>Copyright © 2009-2014 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
 Copyright © 2014 The BlackCoin developers
-Copyright © 2015 The Shadow developers</source>
+Copyright © 2015 The Shadow developers
+Copyright © 2018 The Wisp developers</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2850,8 +2851,8 @@ Erwartete Zeit zum Stake Erhalt ist %3</translation>
     </message>
     <message>
         <location line="-87"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 36657 or testnet: 36757)</source>
-        <translation>Listen for JSON-RPC connections on &lt;port&gt; (default: 36657 or testnet: 36757)</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 36648 or testnet: 36757)</source>
+        <translation>Listen for JSON-RPC connections on &lt;port&gt; (default: 36648 or testnet: 36757)</translation>
     </message>
     <message>
         <location line="-11"/>

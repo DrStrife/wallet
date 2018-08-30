@@ -16,10 +16,12 @@
         <source>Copyright © 2009-2014 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
 Copyright © 2014 The BlackCoin developers
-Copyright © 2015 The Shadow developers</source>
+Copyright © 2015 The Shadow developers
+Copyright © 2018 The Wisp developers</source>
         <translation>コピーライト © 2009-2014 The Bitcoin developers
 コピーライト © 2012-2014 The NovaCoin developers
-コピーライト © 2014-2015 The BlackCoin developers</translation>
+コピーライト © 2014-2015 The BlackCoin developers
+コピーライト © 2018 The Wisp developers</translation>
     </message>
     <message>
         <location line="+16"/>
@@ -2846,8 +2848,8 @@ Expected time to earn reward is %3</source>
     </message>
     <message>
         <location line="-87"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 36657 or testnet: 36757)</source>
-        <translation>&lt;port&gt; で JSON-RPC 接続をリスン (デフォルト: 36657かtestnet は 36757)</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 36648 or testnet: 36757)</source>
+        <translation>&lt;port&gt; で JSON-RPC 接続をリスン (デフォルト: 36648かtestnet は 36757)</translation>
     </message>
     <message>
         <location line="-11"/>
