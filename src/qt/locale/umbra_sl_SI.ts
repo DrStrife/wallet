@@ -3,13 +3,13 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About SpectreCoin</source>
-        <translation>O SpectreCoin</translation>
+        <source>About Wisp</source>
+        <translation>O Wisp</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;SpectreCoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;SpectreCoin&lt;/b&gt; verzija</translation>
+        <source>&lt;b&gt;Wisp&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;Wisp&lt;/b&gt; verzija</translation>
     </message>
     <message>
         <location line="+41"/>
@@ -175,8 +175,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-58"/>
-        <source>SpectreCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>SpectreCoin se bo sedaj zaprl, da dokonča proces šifriranje. Pomnite, da tudi šifriranje vaše denarnice ne more v celoti zaščititi vaših kovancev pred krajo z zlonamernimi programi in računalniškimi virusi, če ti okužijo vaš računalnik.</translation>
+        <source>Wisp will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>Wisp se bo sedaj zaprl, da dokonča proces šifriranje. Pomnite, da tudi šifriranje vaše denarnice ne more v celoti zaščititi vaših kovancev pred krajo z zlonamernimi programi in računalniškimi virusi, če ti okužijo vaš računalnik.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -558,8 +558,8 @@ Ta oznaka se obarva rdeče, če je prioriteta manjša kot &quot;srednja&quot;.
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid SpectreCoin address.</source>
-        <translation>Vneseni naslov &quot;%1&quot; ni veljaven SpectreCoin naslov.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid Wisp address.</source>
+        <translation>Vneseni naslov &quot;%1&quot; ni veljaven Wisp naslov.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -582,7 +582,7 @@ Ta oznaka se obarva rdeče, če je prioriteta manjša kot &quot;srednja&quot;.
     <message>
         <location line="+0"/>
         <location line="+12"/>
-        <source>Spectre</source>
+        <source>Wisp</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -674,7 +674,7 @@ Ta oznaka se obarva rdeče, če je prioriteta manjša kot &quot;srednja&quot;.
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start spectre: click-to-pay handler</source>
+        <source>Cannot start wisp: click-to-pay handler</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -784,12 +784,12 @@ Ta oznaka se obarva rdeče, če je prioriteta manjša kot &quot;srednja&quot;.
     </message>
     <message>
         <location line="-10"/>
-        <source>Spectre - Debug window</source>
+        <source>Wisp - Debug window</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+25"/>
-        <source>Spectre Core</source>
+        <source>Wisp Core</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -824,7 +824,7 @@ Ta oznaka se obarva rdeče, če je prioriteta manjša kot &quot;srednja&quot;.
     </message>
     <message>
         <location line="+157"/>
-        <source>Show the Spectre help message to get a list with possible Spectre command-line options.</source>
+        <source>Show the Wisp help message to get a list with possible Wisp command-line options.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -963,7 +963,7 @@ Ta oznaka se obarva rdeče, če je prioriteta manjša kot &quot;srednja&quot;.
     </message>
     <message>
         <location line="+49"/>
-        <source>Open the Spectre debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the Wisp debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1003,7 +1003,7 @@ Ta oznaka se obarva rdeče, če je prioriteta manjša kot &quot;srednja&quot;.
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-197"/>
-        <source>Welcome to the Spectre Core RPC console.</source>
+        <source>Welcome to the Wisp Core RPC console.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1221,7 +1221,7 @@ Ring size of one is not anonymous, and harms the network.</source>
     </message>
     <message>
         <location line="+5"/>
-        <source>The total exceeds your spectre balance when the %1 transaction fee is included.</source>
+        <source>The total exceeds your wisp balance when the %1 transaction fee is included.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1390,7 +1390,7 @@ Ring size of one is not anonymous, and harms the network.</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>About Spectre</source>
+        <source>About Wisp</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1635,7 +1635,7 @@ Ring size of one is not anonymous, and harms the network.</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>0 active connection(s) to SpectreCoin network</source>
+        <source>0 active connection(s) to Wisp network</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1675,7 +1675,7 @@ Ring size of one is not anonymous, and harms the network.</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Enter a SpectreCoin address to sign the message with (e.g. SaKYqfD8J3vw4RTnqtgk2K9B67CBaL3mhV)</source>
+        <source>Enter a Wisp address to sign the message with (e.g. SaKYqfD8J3vw4RTnqtgk2K9B67CBaL3mhV)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1695,7 +1695,7 @@ Ring size of one is not anonymous, and harms the network.</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Enter a SpectreCoin address to verify the message with (e.g. SaKYqfD8J3vw4RTnqtgk2K9B67CBaL3mhV)</source>
+        <source>Enter a Wisp address to verify the message with (e.g. SaKYqfD8J3vw4RTnqtgk2K9B67CBaL3mhV)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1705,7 +1705,7 @@ Ring size of one is not anonymous, and harms the network.</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Enter a SpectreCoin signature</source>
+        <source>Enter a Wisp signature</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1928,7 +1928,7 @@ Ring size of one is not anonymous, and harms the network.</source>
     <name>WispGUI</name>
     <message>
         <location filename="../wisp.cpp" line="+111"/>
-        <source>A fatal error occurred. Spectre can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. Wisp can no longer continue safely and will quit.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1954,12 +1954,12 @@ Ring size of one is not anonymous, and harms the network.</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;About SpectreCoin</source>
+        <source>&amp;About Wisp</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+1"/>
-        <source>Show information about SpectreCoin</source>
+        <source>Show information about Wisp</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1979,7 +1979,7 @@ Ring size of one is not anonymous, and harms the network.</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Modify configuration options for SpectreCoin</source>
+        <source>Modify configuration options for Wisp</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2081,7 +2081,7 @@ Ring size of one is not anonymous, and harms the network.</source>
     </message>
     <message numerus="yes">
         <location line="+63"/>
-        <source>%n active connection(s) to SpectreCoin network</source>
+        <source>%n active connection(s) to Wisp network</source>
         <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message>
@@ -2240,7 +2240,7 @@ Message: %4
     <message>
         <location line="-23"/>
         <location line="+23"/>
-        <source>URI can not be parsed! This can be caused by an invalid SpectreCoin address or malformed URI parameters.</source>
+        <source>URI can not be parsed! This can be caused by an invalid Wisp address or malformed URI parameters.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2378,12 +2378,12 @@ Expected time to earn reward is %3</source>
     </message>
     <message>
         <location line="+2"/>
-        <source>Received spectre</source>
+        <source>Received wisp</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+2"/>
-        <source>Sent spectre</source>
+        <source>Sent wisp</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2719,8 +2719,8 @@ Expected time to earn reward is %3</source>
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+33"/>
-        <source>SpectreCoin version</source>
-        <translation>SpectreCoin različica</translation>
+        <source>Wisp version</source>
+        <translation>Wisp različica</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2749,8 +2749,8 @@ Expected time to earn reward is %3</source>
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: spectrecoin.conf)</source>
-        <translation>Določi konfiguracijsko datoteko (privzeto: spectrecoin.conf)</translation>
+        <source>Specify configuration file (default: wisp.conf)</source>
+        <translation>Določi konfiguracijsko datoteko (privzeto: wisp.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2904,8 +2904,8 @@ Expected time to earn reward is %3</source>
     </message>
     <message>
         <location line="+61"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong SpectreCoin will not work properly.</source>
-        <translation>Opozorilo: Prosimo preverite svoj datum in čas svojega računalnika! Če je vaša ura nastavljena napačno SpectreCoin ne bo deloval.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Wisp will not work properly.</source>
+        <translation>Opozorilo: Prosimo preverite svoj datum in čas svojega računalnika! Če je vaša ura nastavljena napačno Wisp ne bo deloval.</translation>
     </message>
     <message>
         <location line="-31"/>
@@ -3094,24 +3094,24 @@ Expected time to earn reward is %3</source>
         <source>%s, you must set a rpcpassword in the configuration file:
  %s
 It is recommended you use the following random password:
-rpcuser=spectrecoinrpc
+rpcuser=wisprpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;SpectreCoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;Wisp Alert&quot; admin@foo.com
 </source>
         <translation>%s, nastaviti morate rpcgeslo v konfiguracijski datoteki: 
  %s
 Priporočeno je, da uporabite naslednje naključno geslo:
-rpcuser=spectrecoinrpc
+rpcuser=wisprpc
 rpcpassword=%s
 (tega gesla si vam ni potrebno zapomniti)
 Uporabniško ime in geslo NE SMETA biti ista. 
 Če datoteka ne obstaja, jo ustvarite z lastniškimi dovoljenji za datoteke. 
 Prav tako je priporočeno, da nastavite alernotify, tkako da vas opozori na probleme;
-na primer: alertnotify=echo %%s | mail -s &quot;SpectreCoin Alarm&quot; admin@foo.com
+na primer: alertnotify=echo %%s | mail -s &quot;Wisp Alarm&quot; admin@foo.com
 </translation>
     </message>
     <message>
@@ -3236,13 +3236,13 @@ na primer: alertnotify=echo %%s | mail -s &quot;SpectreCoin Alarm&quot; admin@fo
     </message>
     <message>
         <location line="+1"/>
-        <source>Cannot obtain a lock on data directory %s.  SpectreCoin is probably already running.</source>
-        <translation>Ni bilo mogoče najti podatkovnega imenika %s. Aplikacija SpectreCoin je verjetno že zagnana.</translation>
+        <source>Cannot obtain a lock on data directory %s.  Wisp is probably already running.</source>
+        <translation>Ni bilo mogoče najti podatkovnega imenika %s. Aplikacija Wisp je verjetno že zagnana.</translation>
     </message>
     <message>
         <location line="-98"/>
-        <source>SpectreCoin</source>
-        <translation>SpectreCoin</translation>
+        <source>Wisp</source>
+        <translation>Wisp</translation>
     </message>
     <message>
         <location line="+140"/>
@@ -3276,13 +3276,13 @@ na primer: alertnotify=echo %%s | mail -s &quot;SpectreCoin Alarm&quot; admin@fo
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of SpectreCoin</source>
-        <translation>Napaka pri nalaganju wallet.dat: denarnica zahteva novejšo verzijo SpectreCoin</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of Wisp</source>
+        <translation>Napaka pri nalaganju wallet.dat: denarnica zahteva novejšo verzijo Wisp</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart SpectreCoin to complete</source>
-        <translation>Denarnica mora biti prepisana: ponovno odprite SpectreCoin za dokončanje</translation>
+        <source>Wallet needed to be rewritten: restart Wisp to complete</source>
+        <translation>Denarnica mora biti prepisana: ponovno odprite Wisp za dokončanje</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3351,8 +3351,8 @@ na primer: alertnotify=echo %%s | mail -s &quot;SpectreCoin Alarm&quot; admin@fo
     </message>
     <message>
         <location line="+122"/>
-        <source>Unable to bind to %s on this computer. SpectreCoin is probably already running.</source>
-        <translation>Navezava v %s  na tem računalniku ni mogoča SpectreCoin aplikacija je verjetno že zagnana.</translation>
+        <source>Unable to bind to %s on this computer. Wisp is probably already running.</source>
+        <translation>Navezava v %s  na tem računalniku ni mogoča Wisp aplikacija je verjetno že zagnana.</translation>
     </message>
     <message>
         <location line="-97"/>
