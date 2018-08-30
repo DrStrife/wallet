@@ -2746,8 +2746,8 @@ Verwachten tijd tot beloning is %3</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or spectrecoind</source>
-        <translation>Verstuur commando naar -server of spectrecoind</translation>
+        <source>Send command to -server or wispd</source>
+        <translation>Verstuur commando naar -server of wispd</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2771,7 +2771,7 @@ Verwachten tijd tot beloning is %3</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: spectrecoind.pid)</source>
+        <source>Specify pid file (default: wispd.pid)</source>
         <translation>Selecteer pid bestand (standaard: spectrecoin.conf)</translation>
     </message>
     <message>

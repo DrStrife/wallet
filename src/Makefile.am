@@ -76,7 +76,7 @@ common_SOURCES = anonymize.cpp \
 
 bin_PROGRAMS = wispd
 wispd_SOURCES = $(common_SOURCES) \
-		       spectrecoind.cpp \
+		       wispd.cpp \
 		       noui.cpp
 
 wispd_LDADD = ../leveldb/out-static/libmemenv.a \

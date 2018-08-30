@@ -2733,8 +2733,8 @@ Expected time to earn reward is %3</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or spectrecoind</source>
-        <translation>Envía un comando a -server o spectrecoind</translation>
+        <source>Send command to -server or wispd</source>
+        <translation>Envía un comando a -server o wispd</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2761,8 +2761,8 @@ Expected time to earn reward is %3</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: spectrecoind.pid)</source>
-        <translation>Especifica un archivo pid (por defecto: spectrecoind.pid)</translation>
+        <source>Specify pid file (default: wispd.pid)</source>
+        <translation>Especifica un archivo pid (por defecto: wispd.pid)</translation>
     </message>
     <message>
         <location line="+2"/>

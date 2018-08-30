@@ -2741,8 +2741,8 @@ Erwartete Zeit zum Stake Erhalt ist %3</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or spectrecoind</source>
-        <translation>Kommando versenden an -server oder spectrecoind</translation>
+        <source>Send command to -server or wispd</source>
+        <translation>Kommando versenden an -server oder wispd</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2766,8 +2766,8 @@ Erwartete Zeit zum Stake Erhalt ist %3</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: spectrecoind.pid)</source>
-        <translation>PID Datei angeben (Standard: spectrecoind.pid)</translation>
+        <source>Specify pid file (default: wispd.pid)</source>
+        <translation>PID Datei angeben (Standard: wispd.pid)</translation>
     </message>
     <message>
         <location line="+2"/>

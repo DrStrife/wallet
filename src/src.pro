@@ -238,7 +238,7 @@ SOURCES += \
     $$PWD/script.cpp \
     $$PWD/scrypt.cpp \
     $$PWD/smessage.cpp \
-#    $$PWD/spectrecoind.cpp \
+#    $$PWD/wispd.cpp \
     $$PWD/state.cpp \
     $$PWD/stealth.cpp \
     $$PWD/sync.cpp \

@@ -2738,8 +2738,8 @@ Expected time to earn reward is %3</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or spectrecoind</source>
-        <translation>-server か spectrecoindへコマンドを送る。</translation>
+        <source>Send command to -server or wispd</source>
+        <translation>-server か wispdへコマンドを送る。</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2763,8 +2763,8 @@ Expected time to earn reward is %3</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: spectrecoind.pid)</source>
-        <translation>pid ファイルを特定する (デフォルト: spectrecoind.pid)</translation>
+        <source>Specify pid file (default: wispd.pid)</source>
+        <translation>pid ファイルを特定する (デフォルト: wispd.pid)</translation>
     </message>
     <message>
         <location line="+2"/>

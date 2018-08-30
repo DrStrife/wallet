@@ -2729,8 +2729,8 @@ Expected time to earn reward is %3</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or spectrecoind</source>
-        <translation>Syötä komento kohteeseen -server tai spectrecoind</translation>
+        <source>Send command to -server or wispd</source>
+        <translation>Syötä komento kohteeseen -server tai wispd</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2754,8 +2754,8 @@ Expected time to earn reward is %3</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: spectrecoind.pid)</source>
-        <translation>Määritä prosessitiedosto (oletus: spectrecoind.pid)</translation>
+        <source>Specify pid file (default: wispd.pid)</source>
+        <translation>Määritä prosessitiedosto (oletus: wispd.pid)</translation>
     </message>
     <message>
         <location line="+2"/>

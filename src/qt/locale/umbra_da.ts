@@ -2733,8 +2733,8 @@ Expected time to earn reward is %3</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or spectrecoind</source>
-        <translation>Send kommando til-server eller spectrecoind</translation>
+        <source>Send command to -server or wispd</source>
+        <translation>Send kommando til-server eller wispd</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2758,8 +2758,8 @@ Expected time to earn reward is %3</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: spectrecoind.pid)</source>
-        <translation>Angiv pid fil (standard: spectrecoind.pid)</translation>
+        <source>Specify pid file (default: wispd.pid)</source>
+        <translation>Angiv pid fil (standard: wispd.pid)</translation>
     </message>
     <message>
         <location line="+2"/>

@@ -2729,8 +2729,8 @@ Expected time to earn reward is %3</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or spectrecoind</source>
-        <translation>-sunucu veya spectrecoind&apos;ye komut gönder</translation>
+        <source>Send command to -server or wispd</source>
+        <translation>-sunucu veya wispd&apos;ye komut gönder</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2754,8 +2754,8 @@ Expected time to earn reward is %3</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: spectrecoind.pid)</source>
-        <translation>pid dosyasını belirt (varsayılan: spectrecoind.pid)</translation>
+        <source>Specify pid file (default: wispd.pid)</source>
+        <translation>pid dosyasını belirt (varsayılan: wispd.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
