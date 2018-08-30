@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file license.txt or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef SPECTREGUI_H
-#define SPECTREGUI_H
+#ifndef WISPGUI_H
+#define WISPGUI_H
 
 #include <QMainWindow>
 #include <QWebEngineView>
@@ -12,7 +12,7 @@
 #include <QLabel>
 #include <QModelIndex>
 
-#include "spectrebridge.h"
+#include "wispbridge.h"
 #include "rpcconsole.h"
 
 #include <stdint.h>
@@ -105,7 +105,7 @@ private:
     QWebEngineView* webEngineView;
     WebEnginePage* webEnginePage;
 
-    SpectreBridge *bridge;
+    WispBridge *bridge;
 
     ClientModel *clientModel;
     WalletModel *walletModel;
@@ -140,7 +140,7 @@ private:
     /** Create system tray (notification) icon */
     void createTrayIcon();
 
-    friend class SpectreBridge;
+    friend class WispBridge;
 
 private slots:
     /** Page finished loading */

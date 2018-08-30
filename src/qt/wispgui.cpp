@@ -153,7 +153,7 @@ void WebElement::removeClass(QString className)
 
 WispGUI::WispGUI(QWidget *parent):
     QMainWindow(parent),
-    bridge(new SpectreBridge(this)),
+    bridge(new WispBridge(this)),
     clientModel(0),
     walletModel(0),
     messageModel(0),

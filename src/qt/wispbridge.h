@@ -1,5 +1,5 @@
-#ifndef SPECTREBRIDGE_H
-#define SPECTREBRIDGE_H
+#ifndef WISPBRIDGE_H
+#define WISPBRIDGE_H
 
 class WispGUI;
 class ClientModel;
@@ -88,15 +88,15 @@ protected:
 };
 
 
-class SpectreBridge : public QObject
+class WispBridge : public QObject
 {
     Q_OBJECT
 
     /** Information about the client */
     Q_PROPERTY(QVariantMap info READ getInfo NOTIFY infoChanged)
 public:
-    explicit SpectreBridge(WispGUI *window, QObject *parent = 0);
-    ~SpectreBridge();
+    explicit WispBridge(WispGUI *window, QObject *parent = 0);
+    ~WispBridge();
 
     void setClientModel();
     void setWalletModel();
@@ -250,4 +250,4 @@ private slots:
 
 };
 
-#endif // SPECTREBRIDGE_H
+#endif // WISPBRIDGE_H

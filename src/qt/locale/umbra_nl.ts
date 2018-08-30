@@ -1054,9 +1054,9 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
 </context>
 <context>
-    <name>SpectreBridge</name>
+    <name>WispBridge</name>
     <message>
-        <location filename="../spectrebridge.cpp" line="+401"/>
+        <location filename="../wispbridge.cpp" line="+401"/>
         <source>Incoming Message</source>
         <translation>Inkomend Bericht</translation>
     </message>

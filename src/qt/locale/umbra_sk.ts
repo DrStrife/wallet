@@ -1054,9 +1054,9 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
 </context>
 <context>
-    <name>SpectreBridge</name>
+    <name>WispBridge</name>
     <message>
-        <location filename="../spectrebridge.cpp" line="+401"/>
+        <location filename="../wispbridge.cpp" line="+401"/>
         <source>Incoming Message</source>
         <translation type="unfinished"/>
     </message>

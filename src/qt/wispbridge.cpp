@@ -1,4 +1,4 @@
-#include "spectrebridge.h"
+#include "wispbridge.h"
 
 #include "wispgui.h"
 #include "guiutil.h"
@@ -257,7 +257,7 @@ void MessageThread::run()
 }
 
 
-SpectreBridge::SpectreBridge(WispGUI *window, QObject *parent) :
+WispBridge::WispBridge(WispGUI *window, QObject *parent) :
     QObject         (parent),
     window          (window),
     transactionModel(new TransactionModel()),
@@ -271,7 +271,7 @@ SpectreBridge::SpectreBridge(WispGUI *window, QObject *parent) :
     connect(transactionModel->getModel(), SIGNAL(rowsInserted(QModelIndex,int,int)),    SLOT(insertTransactions(QModelIndex,int,int)));
 }
 
-SpectreBridge::~SpectreBridge()
+WispBridge::~WispBridge()
 {
     delete transactionModel;
     delete addressModel;
@@ -281,7 +281,7 @@ SpectreBridge::~SpectreBridge()
 }
 
 // This is just a hook, we won't really be setting the model...
-void SpectreBridge::setClientModel()
+void WispBridge::setClientModel()
 {
     info->insert("version", CLIENT_VERSION);
     info->insert("build",   window->clientModel->formatFullVersion());
@@ -293,11 +293,11 @@ void SpectreBridge::setClientModel()
     emit infoChanged();
 }
 
-void SpectreBridge::setWalletModel() {
+void WispBridge::setWalletModel() {
     connect(window->clientModel->getOptionsModel(), SIGNAL(visibleTransactionsChanged(QStringList)), SLOT(populateTransactionTable()));
 }
 
-void SpectreBridge::jsReady() {
+void WispBridge::jsReady() {
     window->walletModel->getOptionsModel()->emitDisplayUnitChanged(window->walletModel->getOptionsModel()->getDisplayUnit());
     window->walletModel->getOptionsModel()->emitReserveBalanceChanged(window->walletModel->getOptionsModel()->getReserveBalance());
     window->walletModel->getOptionsModel()->emitRowsPerPageChanged(window->walletModel->getOptionsModel()->getRowsPerPage());
@@ -310,25 +310,25 @@ void SpectreBridge::jsReady() {
 }
 
 // This is just a hook, we won't really be setting the model...
-void SpectreBridge::setMessageModel()
+void WispBridge::setMessageModel()
 {
     populateMessageTable();
     connect(thMessage->mtm, SIGNAL(rowsInserted(QModelIndex,int,int)), SLOT(insertMessages(QModelIndex,int,int)));
     connect(thMessage->mtm, SIGNAL(modelReset()),                      SLOT(populateMessageTable()));
 }
 
-void SpectreBridge::copy(QString text)
+void WispBridge::copy(QString text)
 {
     QApplication::clipboard()->setText(text);
 }
 
-void SpectreBridge::paste()
+void WispBridge::paste()
 {
     emitPaste(QApplication::clipboard()->text());
 }
 
 // Options
-void SpectreBridge::populateOptions()
+void WispBridge::populateOptions()
 {
     OptionsModel *optionsModel(window->clientModel->getOptionsModel());
 
@@ -395,7 +395,7 @@ void SpectreBridge::populateOptions()
 }
 
 // Transactions
-void SpectreBridge::addRecipient(QString address, QString label, QString narration, qint64 amount, int txnType, int nRingSize)
+void WispBridge::addRecipient(QString address, QString label, QString narration, qint64 amount, int txnType, int nRingSize)
 {
     SendCoinsRecipient rv;
 
@@ -419,12 +419,12 @@ void SpectreBridge::addRecipient(QString address, QString label, QString narrati
     emit addRecipientResult(true);
 }
 
-void SpectreBridge::clearRecipients()
+void WispBridge::clearRecipients()
 {
     recipients.clear();
 }
 
-void SpectreBridge::sendCoins(bool fUseCoinControl, QString sChangeAddr)
+void WispBridge::sendCoins(bool fUseCoinControl, QString sChangeAddr)
 {
     int inputTypes = -1;
     int nAnonOutputs = 0;
@@ -659,7 +659,7 @@ void SpectreBridge::sendCoins(bool fUseCoinControl, QString sChangeAddr)
             return;
 }
 
-void SpectreBridge::openCoinControl()
+void WispBridge::openCoinControl()
 {
     if (!window || !window->walletModel)
         return;
@@ -671,19 +671,19 @@ void SpectreBridge::openCoinControl()
     CoinControlDialog::updateLabels(window->walletModel, 0, this);
 }
 
-void SpectreBridge::updateCoinControlAmount(qint64 amount)
+void WispBridge::updateCoinControlAmount(qint64 amount)
 {
     CoinControlDialog::payAmounts.clear();
     CoinControlDialog::payAmounts.append(amount);
     CoinControlDialog::updateLabels(window->walletModel, 0, this);
 }
 
-void SpectreBridge::updateCoinControlLabels(unsigned int &quantity, int64_t &amount, int64_t &fee, int64_t &afterfee, unsigned int &bytes, QString &priority, QString low, int64_t &change)
+void WispBridge::updateCoinControlLabels(unsigned int &quantity, int64_t &amount, int64_t &fee, int64_t &afterfee, unsigned int &bytes, QString &priority, QString low, int64_t &change)
 {
     emitCoinControlUpdate(quantity, amount, fee, afterfee, bytes, priority, low, change);
 }
 
-QVariantMap SpectreBridge::listAnonOutputs()
+QVariantMap WispBridge::listAnonOutputs()
 {
     QVariantMap anonOutputs;
     typedef std::map<int64_t, int> outputCount;
@@ -729,7 +729,7 @@ QVariantMap SpectreBridge::listAnonOutputs()
     return anonOutputs;
 };
 
-void SpectreBridge::populateTransactionTable()
+void WispBridge::populateTransactionTable()
 {
     if(transactionModel->thread() == thread())
     {
@@ -741,26 +741,26 @@ void SpectreBridge::populateTransactionTable()
     transactionModel->populatePage();
 }
 
-void SpectreBridge::updateTransactions(QModelIndex topLeft, QModelIndex bottomRight)
+void WispBridge::updateTransactions(QModelIndex topLeft, QModelIndex bottomRight)
 {
     // Updated transactions...
     if(topLeft.column() == TransactionTableModel::Status)
         transactionModel->populateRows(topLeft.row(), bottomRight.row());
 }
 
-void SpectreBridge::insertTransactions(const QModelIndex & parent, int start, int end)
+void WispBridge::insertTransactions(const QModelIndex & parent, int start, int end)
 {
     // New Transactions...
     transactionModel->populateRows(start, end);
 }
 
-void SpectreBridge::transactionDetails(QString txid)
+void WispBridge::transactionDetails(QString txid)
 {
     emit transactionDetailsResult(window->walletModel->getTransactionTableModel()->index(window->walletModel->getTransactionTableModel()->lookupTransaction(txid), 0).data(TransactionTableModel::LongDescriptionRole).toString());
 }
 
 // Addresses
-void SpectreBridge::populateAddressTable()
+void WispBridge::populateAddressTable()
 {
     if(addressModel->thread() == thread())
     {
@@ -774,12 +774,12 @@ void SpectreBridge::populateAddressTable()
     addressModel->populateAddressTable();
 }
 
-void SpectreBridge::updateAddresses(QModelIndex topLeft, QModelIndex bottomRight)
+void WispBridge::updateAddresses(QModelIndex topLeft, QModelIndex bottomRight)
 {
     addressModel->poplateRows(topLeft.row(), bottomRight.row());
 }
 
-void SpectreBridge::insertAddresses(const QModelIndex & parent, int start, int end)
+void WispBridge::insertAddresses(const QModelIndex & parent, int start, int end)
 {
     // NOTE: Check inInitialBlockDownload here as many stealth addresses uncovered can slow wallet
     //       fPassGuiAddresses allows addresses added manually to still reflect
@@ -790,7 +790,7 @@ void SpectreBridge::insertAddresses(const QModelIndex & parent, int start, int e
     addressModel->poplateRows(start, end);
 }
 
-void SpectreBridge::newAddress(QString addressLabel, int addressType, QString address, bool send)
+void WispBridge::newAddress(QString addressLabel, int addressType, QString address, bool send)
 {
     // Generate a new address to associate with given label
     // NOTE: unlock happens in addRow
@@ -800,7 +800,7 @@ void SpectreBridge::newAddress(QString addressLabel, int addressType, QString ad
 }
 
 //replica  of the above method for Javascript to diffrentiate when call backs are needed
-void SpectreBridge::newAddress_2(QString addressLabel, int addressType, QString address, bool send)
+void WispBridge::newAddress_2(QString addressLabel, int addressType, QString address, bool send)
 {
     // Generate a new address to associate with given label
     // NOTE: unlock happens in addRow
@@ -809,7 +809,7 @@ void SpectreBridge::newAddress_2(QString addressLabel, int addressType, QString 
     emit newAddress_2Result(rv);
 }
 
-void SpectreBridge::lastAddressError()
+void WispBridge::lastAddressError()
 {
     QString sError;
     AddressTableModel::EditStatus status = addressModel->atm->getEditStatus();
@@ -837,19 +837,19 @@ void SpectreBridge::lastAddressError()
     emit lastAddressErrorResult(sError);
 }
 
-QString SpectreBridge::getAddressLabel(QString address)
+QString WispBridge::getAddressLabel(QString address)
 {
     QString result = addressModel->atm->labelForAddress(address);
     emit getAddressLabelResult(result);
     return result;
 }
 
-void SpectreBridge::getAddressLabel_2(QString address)
+void WispBridge::getAddressLabel_2(QString address)
 {
     emit getAddressLabel_2Result(addressModel->atm->labelForAddress(address));
 }
 
-void SpectreBridge::updateAddressLabel(QString address, QString label)
+void WispBridge::updateAddressLabel(QString address, QString label)
 {
     QString actualLabel = getAddressLabel(address);
 
@@ -861,24 +861,24 @@ void SpectreBridge::updateAddressLabel(QString address, QString label)
     addressModel->atm->setData(addressModel->atm->index(addressModel->atm->lookupAddress(address), addressModel->atm->Label), QVariant(label), Qt::EditRole);
 }
 
-void SpectreBridge::validateAddress(QString address)
+void WispBridge::validateAddress(QString address)
 {
     bool result = window->walletModel->validateAddress(address);
     emit validateAddressResult(result);
 }
 
-bool SpectreBridge::deleteAddress(QString address)
+bool WispBridge::deleteAddress(QString address)
 {
     return addressModel->atm->removeRow(addressModel->atm->lookupAddress(address));
 }
 
 // Messages
-void SpectreBridge::appendMessages(QString messages, bool reset)
+void WispBridge::appendMessages(QString messages, bool reset)
 {
     emitMessages("[" + messages + "]", reset);
 }
 
-void SpectreBridge::appendMessage(int row)
+void WispBridge::appendMessage(int row)
 {
     emitMessage(window->messageModel->index(row, MessageModel::Key).data().toString().toHtmlEscaped(),
                 window->messageModel->index(row, MessageModel::Type).data().toString().toHtmlEscaped(),
@@ -893,7 +893,7 @@ void SpectreBridge::appendMessage(int row)
                 window->messageModel->index(row, MessageModel::Message).data().toString().toHtmlEscaped());
 }
 
-void SpectreBridge::populateMessageTable()
+void WispBridge::populateMessageTable()
 {
     thMessage->mtm = window->messageModel;
 
@@ -901,7 +901,7 @@ void SpectreBridge::populateMessageTable()
     thMessage->start();
 }
 
-void SpectreBridge::insertMessages(const QModelIndex & parent, int start, int end)
+void WispBridge::insertMessages(const QModelIndex & parent, int start, int end)
 {
     while(start <= end)
     {
@@ -910,22 +910,22 @@ void SpectreBridge::insertMessages(const QModelIndex & parent, int start, int en
     }
 }
 
-void SpectreBridge::deleteMessage(QString key)
+void WispBridge::deleteMessage(QString key)
 {
     window->messageModel->removeRow(thMessage->mtm->lookupMessage(key));
 }
 
-void SpectreBridge::markMessageAsRead(QString key)
+void WispBridge::markMessageAsRead(QString key)
 {
     window->messageModel->markMessageAsRead(key);
 }
 
-QString SpectreBridge::getPubKey(QString address)
+QString WispBridge::getPubKey(QString address)
 {
     return addressModel->atm->pubkeyForAddress(address);;
 }
 
-bool SpectreBridge::setPubKey(QString address, QString pubkey)
+bool WispBridge::setPubKey(QString address, QString pubkey)
 {
     std::string sendTo = address.toStdString();
     std::string pbkey  = pubkey.toStdString();
@@ -934,7 +934,7 @@ bool SpectreBridge::setPubKey(QString address, QString pubkey)
     return res == 0||res == 4;
 }
 
-void SpectreBridge::sendMessage(const QString &address, const QString &message, const QString &from)
+void WispBridge::sendMessage(const QString &address, const QString &message, const QString &from)
 {
     WalletModel::UnlockContext ctx(window->walletModel->requestUnlock());
 
@@ -992,7 +992,7 @@ void SpectreBridge::sendMessage(const QString &address, const QString &message, 
     return;
 }
 
-void SpectreBridge::createGroupChat(QString label)
+void WispBridge::createGroupChat(QString label)
 {
     //return address to invite to people to.
     LOCK2(cs_main, pwalletMain->cs_wallet);
@@ -1023,7 +1023,7 @@ void SpectreBridge::createGroupChat(QString label)
 }
 
 
-void SpectreBridge::joinGroupChat(QString privkey, QString label)
+void WispBridge::joinGroupChat(QString privkey, QString label)
 {
     /*
     EXPERIMENTAL CODE, UNTESTED.
@@ -1080,7 +1080,7 @@ void SpectreBridge::joinGroupChat(QString privkey, QString label)
 }
 
 
-QVariantList SpectreBridge::inviteGroupChat(QString qsaddress, QVariantList invites, QString from)
+QVariantList WispBridge::inviteGroupChat(QString qsaddress, QVariantList invites, QString from)
 {
     //TODO: check if part of HD wallet, if it is refuse to send invites.
     QVariantList r; //Return
@@ -1162,7 +1162,7 @@ QVariantList SpectreBridge::inviteGroupChat(QString qsaddress, QVariantList invi
     return invites;
 }
 
-QString SpectreBridge::translateHtmlString(QString string)
+QString WispBridge::translateHtmlString(QString string)
 {
     int i = 0;
     while (html_strings[i] != 0)
@@ -1176,7 +1176,7 @@ QString SpectreBridge::translateHtmlString(QString string)
     return string;
 }
 
-QJsonValue SpectreBridge::userAction(QJsonValue action)
+QJsonValue WispBridge::userAction(QJsonValue action)
 {
     QJsonArray array;
 
@@ -1219,7 +1219,7 @@ QJsonValue SpectreBridge::userAction(QJsonValue action)
 }
 
 // Blocks
-void SpectreBridge::listLatestBlocks()
+void WispBridge::listLatestBlocks()
 {
     CBlockIndex* recentBlock = pindexBest;
     CBlock block;
@@ -1251,7 +1251,7 @@ void SpectreBridge::listLatestBlocks()
     return;
 }
 
-void SpectreBridge::findBlock(QString searchID)
+void WispBridge::findBlock(QString searchID)
 {
     CBlockIndex* findBlock;
 
@@ -1308,7 +1308,7 @@ void SpectreBridge::findBlock(QString searchID)
     emit findBlockResult(foundBlock);
 }
 
-void SpectreBridge::blockDetails(QString blkHash)
+void WispBridge::blockDetails(QString blkHash)
 {
     QVariantMap blockDetail;
 
@@ -1392,7 +1392,7 @@ void SpectreBridge::blockDetails(QString blkHash)
     return;
 }
 
-void SpectreBridge::listTransactionsForBlock(QString blkHash)
+void WispBridge::listTransactionsForBlock(QString blkHash)
 {
     QVariantMap blkTransactions;
 
@@ -1438,7 +1438,7 @@ void SpectreBridge::listTransactionsForBlock(QString blkHash)
     return;
 }
 
-void SpectreBridge::txnDetails(QString blkHash, QString txnHash)
+void WispBridge::txnDetails(QString blkHash, QString txnHash)
 {
     QVariantMap txnDetail;
 
@@ -1593,7 +1593,7 @@ void SpectreBridge::txnDetails(QString blkHash, QString txnHash)
     return;
 }
 
-QVariantMap SpectreBridge::signMessage(QString address, QString message)
+QVariantMap WispBridge::signMessage(QString address, QString message)
 {
     QVariantMap result;
 
@@ -1640,7 +1640,7 @@ QVariantMap SpectreBridge::signMessage(QString address, QString message)
     return result;
 }
 
-QVariantMap SpectreBridge::verifyMessage(QString address, QString message, QString signature)
+QVariantMap WispBridge::verifyMessage(QString address, QString message, QString signature)
 {
     QVariantMap result;
 
@@ -1689,7 +1689,7 @@ QVariantMap SpectreBridge::verifyMessage(QString address, QString message, QStri
     return result;
 }
 
-void SpectreBridge::getNewMnemonic(QString password, QString language)
+void WispBridge::getNewMnemonic(QString password, QString language)
 {
     QVariantMap result;
     int nLanguage = language.toInt();
@@ -1752,7 +1752,7 @@ void SpectreBridge::getNewMnemonic(QString password, QString language)
     return;
 }
 
-void SpectreBridge::importFromMnemonic(QString inMnemonic, QString inPassword, QString inLabel, bool fBip44, int64_t nCreateTime)
+void WispBridge::importFromMnemonic(QString inMnemonic, QString inPassword, QString inLabel, bool fBip44, int64_t nCreateTime)
 {
     std::string sPassword = inPassword.toStdString();
     std::string sMnemonic = inMnemonic.toStdString();
@@ -2057,7 +2057,7 @@ public:
     QVariantMap *resultMap;
 };
 
-void SpectreBridge::extKeyAccList() {
+void WispBridge::extKeyAccList() {
     QVariantMap result;
 
     GUIListExtCallback extKeys(&result, 10 );
@@ -2075,7 +2075,7 @@ void SpectreBridge::extKeyAccList() {
     return;
 }
 
-void SpectreBridge::extKeyList() {
+void WispBridge::extKeyList() {
     QVariantMap result;
 
     GUIListExtCallback extKeys(&result, 10 );
@@ -2089,7 +2089,7 @@ void SpectreBridge::extKeyList() {
     return;
 }
 
-void SpectreBridge::extKeyImport(QString inKey, QString inLabel, bool fBip44, int64_t nCreateTime)
+void WispBridge::extKeyImport(QString inKey, QString inLabel, bool fBip44, int64_t nCreateTime)
 {
     QVariantMap result;
     std::string sInKey = inKey.toStdString();
@@ -2193,7 +2193,7 @@ void SpectreBridge::extKeyImport(QString inKey, QString inLabel, bool fBip44, in
     return;
 }
 
-void SpectreBridge::extKeySetDefault(QString extKeyID)
+void WispBridge::extKeySetDefault(QString extKeyID)
 {
     QVariantMap result;
 
@@ -2263,7 +2263,7 @@ void SpectreBridge::extKeySetDefault(QString extKeyID)
     return;
 }
 
-void SpectreBridge::extKeySetMaster(QString extKeyID)
+void WispBridge::extKeySetMaster(QString extKeyID)
 {
     QVariantMap result;
     std::string sInKey = extKeyID.toStdString();
@@ -2330,7 +2330,7 @@ void SpectreBridge::extKeySetMaster(QString extKeyID)
     return;
 }
 
-void SpectreBridge::extKeySetActive(QString extKeyID, QString isActive)
+void WispBridge::extKeySetActive(QString extKeyID, QString isActive)
 {
     QVariantMap result;
     std::string sInKey = extKeyID.toStdString();
