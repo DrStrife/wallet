@@ -1,7 +1,7 @@
 #ifndef SPECTREBRIDGE_H
 #define SPECTREBRIDGE_H
 
-class SpectreGUI;
+class WispGUI;
 class ClientModel;
 class TransactionTableModel;
 class AddressTableModel;
@@ -95,7 +95,7 @@ class SpectreBridge : public QObject
     /** Information about the client */
     Q_PROPERTY(QVariantMap info READ getInfo NOTIFY infoChanged)
 public:
-    explicit SpectreBridge(SpectreGUI *window, QObject *parent = 0);
+    explicit SpectreBridge(WispGUI *window, QObject *parent = 0);
     ~SpectreBridge();
 
     void setClientModel();
@@ -218,7 +218,7 @@ signals:
 
 
 private:
-    SpectreGUI *window;
+    WispGUI *window;
     TransactionModel *transactionModel;
     AddressModel *addressModel;
     MessageThread *thMessage;
@@ -226,7 +226,7 @@ private:
     QVariantMap *info;
     QThread *async;
 
-    friend class SpectreGUI;
+    friend class WispGUI;
 
     inline QVariantMap getInfo() const { return *info; }
 

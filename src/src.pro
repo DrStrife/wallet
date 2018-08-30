@@ -62,7 +62,7 @@ HEADERS += \
     $$PWD/qt/rpcconsole.h \
     $$PWD/qt/scicon.h \
     $$PWD/qt/spectrebridge.h \
-    $$PWD/qt/spectregui.h \
+    $$PWD/qt/wispgui.h \
     $$PWD/qt/trafficgraphwidget.h \
     $$PWD/qt/transactiondesc.h \
     $$PWD/qt/transactionrecord.h \
@@ -161,7 +161,7 @@ SOURCES += \
     $$PWD/qt/scicon.cpp \
     $$PWD/qt/spectre.cpp \
     $$PWD/qt/spectrebridge.cpp \
-    $$PWD/qt/spectregui.cpp \
+    $$PWD/qt/wispgui.cpp \
     $$PWD/qt/trafficgraphwidget.cpp \
     $$PWD/qt/transactiondesc.cpp \
     $$PWD/qt/transactionrecord.cpp \

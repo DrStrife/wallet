@@ -1,6 +1,6 @@
 #include "spectrebridge.h"
 
-#include "spectregui.h"
+#include "wispgui.h"
 #include "guiutil.h"
 
 #ifndef Q_MOC_RUN
@@ -257,7 +257,7 @@ void MessageThread::run()
 }
 
 
-SpectreBridge::SpectreBridge(SpectreGUI *window, QObject *parent) :
+SpectreBridge::SpectreBridge(WispGUI *window, QObject *parent) :
     QObject         (parent),
     window          (window),
     transactionModel(new TransactionModel()),

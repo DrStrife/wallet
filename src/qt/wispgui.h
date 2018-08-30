@@ -38,11 +38,11 @@ class WebEnginePage : public QWebEnginePage
 {
     Q_OBJECT
 public:
-    WebEnginePage(SpectreGUI* gui);
+    WebEnginePage(WispGUI* gui);
     ~WebEnginePage();
 
     bool acceptNavigationRequest(const QUrl & url, QWebEnginePage::NavigationType type, bool);
-    QWebEngineProfile *prepareProfile(SpectreGUI* gui);
+    QWebEngineProfile *prepareProfile(WispGUI* gui);
 
 signals:
     void linkClicked(const QUrl&);
@@ -70,12 +70,12 @@ private:
   Spectre GUI main class. This class represents the main window of the Spectre UI. It communicates with both the client and
   wallet models to give the user an up-to-date view of the current core state.
 */
-class SpectreGUI : public QMainWindow
+class WispGUI : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit SpectreGUI(QWidget *parent = 0);
-    ~SpectreGUI();
+    explicit WispGUI(QWidget *parent = 0);
+    ~WispGUI();
 
     /** Set the client model.
         The client model represents the part of the core that communicates with the P2P network, and is wallet-agnostic.

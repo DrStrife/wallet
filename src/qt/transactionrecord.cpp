@@ -3,7 +3,7 @@
 #include "wallet.h"
 #include "base58.h"
 
-#include "spectregui.h"
+#include "wispgui.h"
 
 /* Return positive answer if transaction should be shown in list.
  */
@@ -20,24 +20,24 @@ QString TransactionRecord::getTypeLabel(const int &type)
     switch(type)
     {
     case RecvWithAddress:
-        return SpectreGUI::tr("Received with");
+        return WispGUI::tr("Received with");
     case RecvFromOther:
-        return SpectreGUI::tr("Received from");
+        return WispGUI::tr("Received from");
     case SendToAddress:
     case SendToOther:
-        return SpectreGUI::tr("Sent to");
+        return WispGUI::tr("Sent to");
     case SendToSelf:
-        return SpectreGUI::tr("Payment to yourself");
+        return WispGUI::tr("Payment to yourself");
     case Generated:
-        return SpectreGUI::tr("Staked");
+        return WispGUI::tr("Staked");
     case GeneratedDonation:
-        return SpectreGUI::tr("Donated");
+        return WispGUI::tr("Donated");
     case RecvSpectre:
-        return SpectreGUI::tr("Received spectre");
+        return WispGUI::tr("Received spectre");
     case SendSpectre:
-        return SpectreGUI::tr("Sent spectre");
+        return WispGUI::tr("Sent spectre");
     case Other:
-        return SpectreGUI::tr("Other");
+        return WispGUI::tr("Other");
     default:
         return "";
     }

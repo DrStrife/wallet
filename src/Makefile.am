@@ -225,7 +225,7 @@ bin_PROGRAMS += wisp
 
 wisp_SOURCES = $(common_SOURCES) \
 		  qt/qrc_spectre.cpp \
-		  qt/moc_spectregui.cpp \
+		  qt/moc_wispgui.cpp \
 		  qt/moc_spectrebridge.cpp \
 		  qt/moc_rpcconsole.cpp \
 		  qt/moc_peertablemodel.cpp \
@@ -279,7 +279,7 @@ wisp_SOURCES = $(common_SOURCES) \
 		  qt/scicon.cpp \
 		  qt/trafficgraphwidget.cpp \
 		  qt/messagemodel.cpp \
-		  qt/spectregui.cpp \
+		  qt/wispgui.cpp \
 		  qt/spectre.cpp \
 		  qt/spectrebridge.cpp
 

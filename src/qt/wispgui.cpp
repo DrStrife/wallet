@@ -2,7 +2,7 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file license.txt or http://www.opensource.org/licenses/mit-license.php.
 
-#include "spectregui.h"
+#include "wispgui.h"
 #include "transactiontablemodel.h"
 #include "transactionrecord.h"
 
@@ -57,7 +57,7 @@
 extern CWallet* pwalletMain;
 double GetPoSKernelPS();
 
-WebEnginePage::WebEnginePage(SpectreGUI* gui) : QWebEnginePage(this->prepareProfile(gui))
+WebEnginePage::WebEnginePage(WispGUI* gui) : QWebEnginePage(this->prepareProfile(gui))
 {
 
 }
@@ -78,7 +78,7 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl &url, QWebEnginePage::Nav
 
 //http://lists.qt-project.org/pipermail/qtwebengine/2016-March/000338.html
 //https://meetingcpp.com/blog/items/refactoring-the-html-text-editor-for-qwebengine.html
-QWebEngineProfile *WebEnginePage::prepareProfile(SpectreGUI* gui)
+QWebEngineProfile *WebEnginePage::prepareProfile(WispGUI* gui)
 {
     QWebEngineProfile *profile = new QWebEngineProfile("Profile", gui);
 
@@ -151,7 +151,7 @@ void WebElement::removeClass(QString className)
     webEnginePage->runJavaScript(javascriptCode);
 }
 
-SpectreGUI::SpectreGUI(QWidget *parent):
+WispGUI::WispGUI(QWidget *parent):
     QMainWindow(parent),
     bridge(new SpectreBridge(this)),
     clientModel(0),
@@ -220,7 +220,7 @@ SpectreGUI::SpectreGUI(QWidget *parent):
 
 unsigned short const onion_port = 9084;
 
-void SpectreGUI::loadIndex() {
+void WispGUI::loadIndex() {
 #ifdef Q_OS_WIN
     QFile html("C:/spectre/index.html");
 #else
@@ -244,7 +244,7 @@ void SpectreGUI::loadIndex() {
 //#endif
 }
 
-SpectreGUI::~SpectreGUI()
+WispGUI::~WispGUI()
 {
     if(trayIcon) // Hide tray icon, as deleting will let it linger until quit (on Ubuntu)
         trayIcon->hide();
@@ -255,7 +255,7 @@ SpectreGUI::~SpectreGUI()
 #endif
 }
 
-void SpectreGUI::pageLoaded(bool ok)
+void WispGUI::pageLoaded(bool ok)
 {
     if (GetBoolArg("-staking", true))
     {
@@ -270,7 +270,7 @@ void SpectreGUI::pageLoaded(bool ok)
     }
 }
 
-void SpectreGUI::addJavascriptObjects()
+void WispGUI::addJavascriptObjects()
 {
     //Following the example at https://doc.qt.io/qt-5.10/qtwebengine-webenginewidgets-markdowneditor-example.html
     QWebChannel *channel = new QWebChannel(this);
@@ -289,7 +289,7 @@ void SpectreGUI::addJavascriptObjects()
     webEnginePage->setWebChannel(channel);
 }
 
-void SpectreGUI::urlClicked(const QUrl & link)
+void WispGUI::urlClicked(const QUrl & link)
 {
     if(link.scheme() == "qrc" || link.scheme() == "file")
         return;
@@ -297,7 +297,7 @@ void SpectreGUI::urlClicked(const QUrl & link)
     QDesktopServices::openUrl(link);
 }
 
-void SpectreGUI::createActions()
+void WispGUI::createActions()
 {
 
     quitAction = new QAction(QIcon(":/icons/quit"), tr("E&xit"), this);
@@ -343,7 +343,7 @@ void SpectreGUI::createActions()
     connect(lockWalletAction, SIGNAL(triggered()), SLOT(lockWallet()));
 }
 
-void SpectreGUI::createMenuBar()
+void WispGUI::createMenuBar()
 {
 #ifdef Q_OS_MAC
     // Create a decoupled menu bar on Mac which stays even if the window is closed
@@ -376,7 +376,7 @@ void SpectreGUI::createMenuBar()
     help->addAction(aboutQtAction);
 }
 
-void SpectreGUI::setClientModel(ClientModel *clientModel)
+void WispGUI::setClientModel(ClientModel *clientModel)
 {
     this->clientModel = clientModel;
     if (clientModel)
@@ -423,7 +423,7 @@ void SpectreGUI::setClientModel(ClientModel *clientModel)
     }
 }
 
-void SpectreGUI::setWalletModel(WalletModel *walletModel)
+void WispGUI::setWalletModel(WalletModel *walletModel)
 {
     this->walletModel = walletModel;
     if(walletModel)
@@ -445,7 +445,7 @@ void SpectreGUI::setWalletModel(WalletModel *walletModel)
     }
 }
 
-void SpectreGUI::setMessageModel(MessageModel *messageModel)
+void WispGUI::setMessageModel(MessageModel *messageModel)
 {
     this->messageModel = messageModel;
     if(messageModel)
@@ -456,7 +456,7 @@ void SpectreGUI::setMessageModel(MessageModel *messageModel)
     }
 }
 
-void SpectreGUI::createTrayIcon()
+void WispGUI::createTrayIcon()
 {
     QMenu *trayIconMenu;
 #ifndef Q_OS_MAC
@@ -490,7 +490,7 @@ void SpectreGUI::createTrayIcon()
 }
 
 #ifndef Q_OS_MAC
-void SpectreGUI::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
+void WispGUI::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
 {
     if(reason == QSystemTrayIcon::Trigger)
     {
@@ -500,14 +500,14 @@ void SpectreGUI::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
 }
 #endif
 
-void SpectreGUI::aboutClicked()
+void WispGUI::aboutClicked()
 {
     AboutDialog dlg;
     dlg.setModel(clientModel);
     dlg.exec();
 }
 
-void SpectreGUI::setNumConnections(int count)
+void WispGUI::setNumConnections(int count)
 {
     WebElement connectionIcon = WebElement(webEnginePage, "connectionsIcon");
 
@@ -533,7 +533,7 @@ void SpectreGUI::setNumConnections(int count)
     connectionIcon.setAttribute("data-title", dataTitle);
 }
 
-void SpectreGUI::setNumBlocks(int count, int nTotalBlocks)
+void WispGUI::setNumBlocks(int count, int nTotalBlocks)
 {
     WebElement blocksIcon = WebElement(webEnginePage, "blocksIcon");
     WebElement syncingIcon = WebElement(webEnginePage, "syncingIcon");
@@ -685,7 +685,7 @@ void SpectreGUI::setNumBlocks(int count, int nTotalBlocks)
     syncProgressBar.setAttribute("max", QString::number(nTotalBlocks));
 }
 
-void SpectreGUI::error(const QString &title, const QString &message, bool modal)
+void WispGUI::error(const QString &title, const QString &message, bool modal)
 {
     // Report errors from network/worker thread
     if(modal)
@@ -697,7 +697,7 @@ void SpectreGUI::error(const QString &title, const QString &message, bool modal)
     }
 }
 
-void SpectreGUI::changeEvent(QEvent *e)
+void WispGUI::changeEvent(QEvent *e)
 {
     QMainWindow::changeEvent(e);
 #ifndef Q_OS_MAC // Ignored on Mac
@@ -716,7 +716,7 @@ void SpectreGUI::changeEvent(QEvent *e)
 #endif
 }
 
-void SpectreGUI::closeEvent(QCloseEvent *event)
+void WispGUI::closeEvent(QCloseEvent *event)
 {
     if(clientModel)
     {
@@ -731,7 +731,7 @@ void SpectreGUI::closeEvent(QCloseEvent *event)
     QMainWindow::closeEvent(event);
 }
 
-void SpectreGUI::askFee(qint64 nFeeRequired, bool *payFee)
+void WispGUI::askFee(qint64 nFeeRequired, bool *payFee)
 {
     QString strMessage =
         tr("This transaction is over the size limit.  You can still send it for a fee of %1, "
@@ -744,7 +744,7 @@ void SpectreGUI::askFee(qint64 nFeeRequired, bool *payFee)
     *payFee = (retval == QMessageBox::Yes);
 }
 
-void SpectreGUI::incomingTransaction(const QModelIndex & parent, int start, int end)
+void WispGUI::incomingTransaction(const QModelIndex & parent, int start, int end)
 {
     if(!walletModel || !clientModel || clientModel->inInitialBlockDownload() || nNodeState != NS_READY)
         return;
@@ -779,7 +779,7 @@ void SpectreGUI::incomingTransaction(const QModelIndex & parent, int start, int 
                           .arg(address), icon);
 }
 
-void SpectreGUI::incomingMessage(const QModelIndex & parent, int start, int end)
+void WispGUI::incomingMessage(const QModelIndex & parent, int start, int end)
 {
     if(!messageModel)
         return;
@@ -812,25 +812,25 @@ void SpectreGUI::incomingMessage(const QModelIndex & parent, int start, int end)
     };
 }
 
-void SpectreGUI::optionsClicked()
+void WispGUI::optionsClicked()
 {
     bridge->triggerElement("#navitems a[href=#options]", "click");
     showNormalIfMinimized();
 }
 
-void SpectreGUI::dragEnterEvent(QDragEnterEvent *event)
+void WispGUI::dragEnterEvent(QDragEnterEvent *event)
 {
     // Accept only URIs
     if(event->mimeData()->hasUrls())
         event->acceptProposedAction();
 }
 
-void SpectreGUI::dragMoveEvent(QDragMoveEvent *event)
+void WispGUI::dragMoveEvent(QDragMoveEvent *event)
 {
     event->accept();
 }
 
-void SpectreGUI::dropEvent(QDropEvent *event)
+void WispGUI::dropEvent(QDropEvent *event)
 {
     if(event->mimeData()->hasUrls())
     {
@@ -852,7 +852,7 @@ void SpectreGUI::dropEvent(QDropEvent *event)
     event->acceptProposedAction();
 }
 
-void SpectreGUI::handleURI(QString strURI)
+void WispGUI::handleURI(QString strURI)
 {
     SendCoinsRecipient rv;
 
@@ -871,7 +871,7 @@ void SpectreGUI::handleURI(QString strURI)
         notificator->notify(Notificator::Warning, tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid SpectreCoin address or malformed URI parameters."));
 }
 
-void SpectreGUI::setEncryptionStatus(int status)
+void WispGUI::setEncryptionStatus(int status)
 {
     WebElement encryptionIcon    = WebElement(webEnginePage, "encryptionIcon");
     WebElement encryptButton     = WebElement(webEnginePage, "encryptWallet");
@@ -961,7 +961,7 @@ void SpectreGUI::setEncryptionStatus(int status)
     }
 }
 
-void SpectreGUI::encryptWallet(bool status)
+void WispGUI::encryptWallet(bool status)
 {
     if(!walletModel)
         return;
@@ -973,7 +973,7 @@ void SpectreGUI::encryptWallet(bool status)
     setEncryptionStatus(walletModel->getEncryptionStatus());
 }
 
-void SpectreGUI::backupWallet()
+void WispGUI::backupWallet()
 {
     if (QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).count() == 0) {
         qFatal("QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).count() == 0");
@@ -989,14 +989,14 @@ void SpectreGUI::backupWallet()
     }
 }
 
-void SpectreGUI::changePassphrase()
+void WispGUI::changePassphrase()
 {
     AskPassphraseDialog dlg(AskPassphraseDialog::ChangePass, this);
     dlg.setModel(walletModel);
     dlg.exec();
 }
 
-void SpectreGUI::unlockWallet()
+void WispGUI::unlockWallet()
 {
     if(!walletModel)
         return;
@@ -1013,7 +1013,7 @@ void SpectreGUI::unlockWallet()
     }
 }
 
-void SpectreGUI::lockWallet()
+void WispGUI::lockWallet()
 {
     if(!walletModel)
         return;
@@ -1021,7 +1021,7 @@ void SpectreGUI::lockWallet()
     walletModel->setWalletLocked(true);
 }
 
-void SpectreGUI::toggleLock()
+void WispGUI::toggleLock()
 {
     if(!walletModel)
         return;
@@ -1039,7 +1039,7 @@ void SpectreGUI::toggleLock()
     };
 }
 
-void SpectreGUI::showNormalIfMinimized(bool fToggleHidden)
+void WispGUI::showNormalIfMinimized(bool fToggleHidden)
 {
     // activateWindow() (sometimes) helps with keyboard focus on Windows
     if (isHidden())
@@ -1061,12 +1061,12 @@ void SpectreGUI::showNormalIfMinimized(bool fToggleHidden)
         hide();
 }
 
-void SpectreGUI::toggleHidden()
+void WispGUI::toggleHidden()
 {
     showNormalIfMinimized(true);
 }
 
-void SpectreGUI::updateWeight()
+void WispGUI::updateWeight()
 {
     if (!pwalletMain)
         return;
@@ -1082,7 +1082,7 @@ void SpectreGUI::updateWeight()
     nWeight = pwalletMain->GetStakeWeight();
 }
 
-void SpectreGUI::updateStakingIcon()
+void WispGUI::updateStakingIcon()
 {
     WebElement stakingIcon = WebElement(webEnginePage, "stakingIcon");
     uint64_t nNetworkWeight = 0;
@@ -1130,7 +1130,7 @@ void SpectreGUI::updateStakingIcon()
     }
 }
 
-void SpectreGUI::detectShutdown()
+void WispGUI::detectShutdown()
 {
     if (ShutdownRequested())
         QMetaObject::invokeMethod(QCoreApplication::instance(), "quit", Qt::QueuedConnection);

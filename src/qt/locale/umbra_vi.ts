@@ -1911,14 +1911,14 @@ Ring size of one is not anonymous, and harms the network.</source>
     </message>
 </context>
 <context>
-    <name>SpectreGUI</name>
+    <name>WispGUI</name>
     <message>
         <location filename="../spectre.cpp" line="+111"/>
         <source>A fatal error occurred. Spectre can no longer continue safely and will quit.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../spectregui.cpp" line="+89"/>
+        <location filename="../wispgui.cpp" line="+89"/>
         <location line="+178"/>
         <source>Umbra</source>
         <translation type="unfinished"/>
